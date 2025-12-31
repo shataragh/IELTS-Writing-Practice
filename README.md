@@ -1,57 +1,78 @@
-# IELTS Writing Practice Tool
+# IELTS / TOEFL / Tolimo Writing Practice Tool
 
 <div align="center">
 
-![IELTS Academic Task 1 Mode](https://i.imgur.com/3qxaWYF.png)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)  
+[![Python ≥3.9](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)  
+[![Offline AI](https://img.shields.io/badge/ai-local%20%26%20offline-success)](#features)
 
-![IELTS Task 2 / Tolimo Mode](https://i.imgur.com/2clIYGH.png)
+![Task 1 Interface](https://i.imgur.com/3qxaWYF.png)  
+*IELTS Academic Task 1: Side-by-side diagram and writing pane*
 
-**A powerful, offline, AI-assisted desktop application** for practicing **IELTS Academic Writing (Task 1 & Task 2)** and **Tolimo** with intelligent real-time feedback.
-
-Perfect for students targeting Band 7+.
+![Task 2 Interface](https://i.imgur.com/2clIYGH.png)  
+*Task 2 & Tolimo: Full-response writing with real-time AI feedback*
 
 </div>
+
+> A privacy-focused, **offline-first desktop application** for practicing **IELTS Academic Writing (Task 1 & Task 2)**, **TOEFL**, and **Tolimo** essays — featuring **local AI-powered paragraph analysis**, exam-accurate timing, and intelligent topic management. Designed for self-directed learners targeting **Band 7+**.
 
 ---
 
 ## ✨ Key Features
 
-- **Optimized Task 1 Experience**  
-  Side-by-side layout: diagram on the left, writing area on the right — both always visible simultaneously
-- **Image Zoom Controls**  
-  Magnify diagrams to examine fine details, then reset to original size for comfortable writing
-- **Real-Time AI Paragraph Evaluation**  
-  Each paragraph is independently analyzed using a local AI model:  
-  • Excellent → Strong green  
-  • Good → Light green  
-  • Average → Amber  
-  • Weak → Red
-- **Accurate Word Counter**  
-  Counts only your response with clear visual target: 150 words (Task 1) / 250 words (Task 2 & Tolimo)
-- **Exam-Accurate Timer**  
-  20 / 30 / 40 minute modes with automatic proofreading alerts at 5 and 3 minutes remaining
-- **Scrollable Writing Area**  
-  Full vertical scrolling for long essays
-- **Right-Click Context Menu**  
-  Copy / Paste / Select All (automatically disabled when time expires and writing box freezes)
+- **Context-Aware Layouts**  
+  - **Task 1 (20 min)**: Dual-pane UI with diagram viewer (left) and writing area (right).  
+  - **Task 2 / Tolimo (30–40 min)**: Full-width writing canvas with distraction-free focus.
+
+- **Diagram Handling**  
+  - Load charts/graphs via **URL** or **local file** (PNG, JPG, WebP, etc.).  
+  - **Zoom (1.8×)** and **reset** controls for detailed visual analysis.
+
+- **On-Device AI Evaluation**  
+  Uses Hugging Face’s `facebook/bart-large-mnli` zero-shot classifier **locally** (no cloud):  
+  - Each paragraph scored in real time as:  
+    - ✅ **Excellent** → `#4CAF50`  
+    - 👍 **Good** → `#8BC34A`  
+    - ⚠️ **Average** → `#FFC107`  
+    - ❌ **Weak** → `#F44336`  
+  - Runs on **CPU or GPU** (CUDA auto-detected).
+
+- **Precision Word Counting**  
+  Counts only the user’s response (excludes the prompt). Visual target indicators:  
+  - **150 words** for Task 1  
+  - **250 words** for Task 2 & Tolimo
+
+- **Authentic Exam Timer**  
+  - Modes: **20 min** (Task 1), **40 min** (Task 2), **30 min** (Tolimo).  
+  - Automatic alerts:  
+    - ⏱️ **5-minute warning** (proofreading phase)  
+    - ⏳ **3-minute warning** (final review)  
+  - **Freezes input** on expiry while allowing copy/export.
+
 - **Smart Topic Management**  
-  Random unused IELTS Task 2 topics (no repetition)
-- **Built-in Comprehensive Help**  
-  Detailed guide accessible via the top-right Help button
-- **Fully Offline After First Launch**  
-  AI model downloaded once — no internet needed during practice sessions
+  - **Random IELTS Task 2 prompts** fetched from [Engnovate](https://engnovate.com/ugc-ielts-writing-task-2-topics/).  
+  - Tracks used topics (`used_topics.txt`) to **avoid repetition**.
+
+- **Enhanced Usability**  
+  - Right-click context menu (Copy / Paste / Select All) — **disabled when frozen**.  
+  - **Scrollable text area** for long responses.  
+  - **Built-in help guide** with mode-specific instructions.
+
+- **100% Offline After Initialization**  
+  AI model (~500 MB) downloads **once on first launch**. No internet required thereafter.
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Installation & Setup
 
-### Requirements
-- Python 3.9 or higher
+### Prerequisites
+- Python **3.9 or higher**
+- Internet connection (for **first-time model download only**)
 
-### Installation
+### Steps
 
 ```bash
 git clone https://github.com/shataragh/IELTS-Writing-Practice.git
 cd IELTS-Writing-Practice
-
 pip install -r requirements.txt
+python main.py
