@@ -1,7 +1,7 @@
-customtkinter==5.2.2
-CTkMessagebox==2.5
-torch==2.0.1
-transformers==4.36.2
-pillow==10.1.0
-requests==2.31.0
-beautifulsoup4==4.12.2
+customtkinter>=5.2.2
+CTkMessagebox>=2.5.0
+torch>=2.0.1
+transformers>=4.36.2
+pillow>=10.1.0
+requests>=2.31.0
+beautifulsoup4>=4.12.2
